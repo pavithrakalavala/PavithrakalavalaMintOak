@@ -20,7 +20,7 @@ public class TestBase {
 		{
 			prop=new Properties();
 			
-			FileInputStream in=new FileInputStream("C:\\NewWorkspace\\AssessmentMintOak\\src\\main\\java\\configpackage\\config.properties");
+			FileInputStream in=new FileInputStream("C:\\NewWorkspace\\AssessmentDigicollect\\src\\main\\java\\configpackage\\config.properties");
 			prop.load(in);
 		}catch(FileNotFoundException e)
 		{
@@ -38,13 +38,13 @@ public class TestBase {
 		String browsername=prop.getProperty("browser");
 		if(browsername.equals("Chrome"))
 				{
-			System.setProperty("webdriver.chrome.driver", "C:/NewWorkspace/AssessmentMintOak/jarfiles/chromedriver_win32/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:/NewWorkspace/AssessmentDigicollect/jarfiles/chromedriver_win32/chromedriver.exe");
 			 driver=new ChromeDriver();
 				}
 		else
 			if(browsername.equals("FF"))
 					{
-				System.setProperty("webdriver.gecko.driver", "C:/NewWorkspace/AssessmentMintOak/jarfiles/geckodriver-v0.29.1-win64/geckodriver.exe");
+				System.setProperty("webdriver.gecko.driver", "C:/NewWorkspace/AssessmentDigicollect/jarfiles/geckodriver-v0.29.1-win64/geckodriver.exe");
 				driver=new FirefoxDriver();
 					}
 		driver.manage().window().maximize();

@@ -29,15 +29,18 @@ public class LoginPageTest extends TestBase {
 				
 	}
 	
-	@Test(priority=1)
-	public void LoginAndvalidateLoginAccount() throws InterruptedException
+	@Test
+	public void LoginAndvalidateHomepageTitle() throws InterruptedException
 	{	
-		homepage.NavigateToSignInPage();	
-		String title=loginpage.LoginpageTitle();
-		Assert.assertEquals(title, "Amazon Sign-In", "Sign-in page title not matching");
+		//homepage.NavigateToSignInPage();	
+		
 		homepage=loginpage.Login(prop.getProperty("Email"),prop.getProperty("Password"));
-		String accountname=homepage.verifyusername();
-		Assert.assertEquals(accountname,"Hello, pavithra","Login Accountname doesnt match");
+		
+		String title=homepage.VerifyHomePageTitle();
+		System.out.println(title);
+		Assert.assertEquals(title, "DigiCollect CRM", "Sign-in page title not matching");
+		//String accountname=homepage.verifyusername();
+		//Assert.assertEquals(accountname,"Hello, pavithra","Login Accountname doesnt match");
 		
 		
 	}

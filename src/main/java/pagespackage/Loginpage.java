@@ -4,23 +4,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 import basepackage.TestBase;
 
 public class Loginpage extends TestBase {
 	
 	//Page Factory-Object Repository:
 	
-	@FindBy(name="email")
-	WebElement txtboxEmail;
-	
+	@FindBy(name="userid")
+	WebElement txtboxEmail;	
 
-	@FindBy(id="continue")
-	WebElement btncontinue;
-	
+		
 	@FindBy(name="password")
 	WebElement txtboxPassword;
 	
-	@FindBy(id="signInSubmit")
+	@FindBy(xpath="//button[normalize-space()='Sign In']")
 	WebElement btnSigninSubmit;		
 	
 		
@@ -39,7 +37,6 @@ public class Loginpage extends TestBase {
 	{
 		
 		txtboxEmail.sendKeys(un);
-		btncontinue.click();
 		txtboxPassword.sendKeys(pwd);
 		btnSigninSubmit.click();
 		Thread.sleep(1000);
